@@ -1,0 +1,59 @@
+header , footer{
+    max-width: 990px;
+    margin: auto;
+    padding: 10px 10px;
+    background-color: #444444;
+}
+h1{
+    font-size: 50px;
+    margin: 10px 50px;
+}
+div{
+    display: inline-block;
+    margin: 10px 50px;
+}
+header div:last-child{
+    float: right;
+}
+header div a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 3px solid transparent;
+  }
+  header div a:hover {
+    border-bottom: 3px solid red;
+  }
+  header div a.active {
+    border-bottom: 3px solid red;
+  }
+main{
+    max-width: 1000px;
+    margin: 20px auto;
+    font-style: oblique;
+}
+section{
+    text-align: center;
+    display: flex;
+    margin: 50px 20px;
+    height: 200px;
+}
+h2{
+    margin-top: 10px;
+    padding: 100p;
+    font-size: 30px;
+    margin-right: 10px;
+}
+ul li{
+    padding: 10px;
+    border: black;
+    border-radius: 2px;
+    border: 3px solid black;
+}
+p{
+    font-size: 25px;
+}
