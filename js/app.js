@@ -5,6 +5,8 @@ let endHour = 20;
 let hourOfWork = endHour - startHour;
 let container = document.getElementById('container');
 let tableEl = document.createElement('table');
+let form = document.getElementById('form');
+form.addEventListener('submit', createForm);
 
 function Branch(location, min, max, avg) {
   this.location = location;
@@ -57,6 +59,7 @@ function Branch(location, min, max, avg) {
     ulEl.appendChild(liEl);
     liEl.textContent = `\nTotal: ${this.cookiesPerHour[hourOfWork]} cookies`;
   };
+
 }
 
 let Seattle = new Branch('Seattle', 23, 65, 6.3);
@@ -65,19 +68,8 @@ let Dubai = new Branch('Dubai', 11, 38, 3.7);
 let Paris = new Branch('Paris', 20, 38, 2.3);
 let Lima = new Branch('Lima', 2, 16, 4.6);
 
-Seattle.printInConsole();
-Tokyo.printInConsole();
-Dubai.printInConsole();
-Paris.printInConsole();
-Lima.printInConsole();
-
-// Seattle.printInHTML();
-// Tokyo.printInHTML();
-// Dubai.printInHTML();
-// Paris.printInHTML();
-// Lima.printInHTML();
-
 let ar = [Seattle, Tokyo, Dubai, Paris, Lima];
+
 function printInTable(ar){
   let theadEl = document.createElement('thead');
   container.appendChild(theadEl);
@@ -136,7 +128,31 @@ function printInTable(ar){
   }
 }
 
+function createForm(event){
+
+  event.preventDefault();
+  let location = event.target.location.value;
+  let min = event.target.min.value;
+  let max = event.target.max.value;
+  let avg = event.target.avg.value;
+  let newB = new Branch(location,min,max,avg);
+  ar.push(newB);
+  document.getElementById('container').innerHTML = '';
+  printInTable(ar);
+}
 printInTable(ar);
+
+// Seattle.printInConsole();
+// Tokyo.printInConsole();
+// Dubai.printInConsole();
+// Paris.printInConsole();
+// Lima.printInConsole();
+
+// Seattle.printInHTML();
+// Tokyo.printInHTML();
+// Dubai.printInHTML();
+// Paris.printInHTML();
+// Lima.printInHTML();
 
 // let Seattle = {
 //   location : 'Seattle',
