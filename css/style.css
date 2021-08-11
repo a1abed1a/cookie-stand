@@ -31,10 +31,14 @@ header div a {
   header div a.active {
     border-bottom: 3px solid red;
   }
-h2{
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 60px;
+  main{
+    max-width: 1000px;
+    margin: 20px auto;
+    font-style: oblique;
+}
+legend{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
 }
 ul{
     padding: 10px;
